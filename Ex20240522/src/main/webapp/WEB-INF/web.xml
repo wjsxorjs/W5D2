@@ -31,12 +31,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Ex3_Servlet</display-name>
-    <servlet-name>Ex3_Servlet</servlet-name>
+    <display-name>Ex3Servlet</display-name>
+    <servlet-name>Ex3Servlet</servlet-name>
     <servlet-class>am.Ex3_Servlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Ex3_Servlet</servlet-name>
+    <servlet-name>Ex3Servlet</servlet-name>
     <url-pattern>/ex3</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex4_Servlet</display-name>
+    <servlet-name>Ex4_Servlet</servlet-name>
+    <servlet-class>am.Ex4_Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex4_Servlet</servlet-name>
+    <url-pattern>/ex4</url-pattern>
   </servlet-mapping>
 </web-app>

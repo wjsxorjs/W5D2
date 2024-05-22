@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Servlet implementation class Ex3_Servlet
+ * Servlet implementation class Ex4_Servlet
  */
-public class Ex3_Servlet extends HttpServlet {
+public class Ex4_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Ex3_Servlet() {
+    public Ex4_Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,14 +34,15 @@ public class Ex3_Servlet extends HttpServlet {
 		
 		// 요청(request)한 곳으로 부터 파라미터(인자) 받기
 		// msg라는 이름으로 전달되는 인자를 받자
-		String param1 = request.getParameter("m_id");
-		String param2 = request.getParameter("m_name");
-		String param3 = request.getParameter("m_addr");
+		String name = request.getParameter("m_name");
+		String[] hobbies = request.getParameterValues("m_hobby");
 
 		// 응답시작
-		out.println("<h2> 받은 아이디:"+param1+"</h2>");
-		out.println("<h2> 받은 이름:"+param2+"</h2>");
-		out.println("<h2> 받은 주소:"+param3+"</h2>");
+		out.println("<h2> 받은 이름:"+name+"</h2>");
+		out.println("<h2> 취미: </h2>");
+		for(int i=0; i<hobbies.length;i++) {
+			out.print(hobbies[i]+"&nbsp;&nbsp;");
+		}
 		
 		out.close();
 	}
