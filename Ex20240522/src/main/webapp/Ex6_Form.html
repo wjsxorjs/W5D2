@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex6_Form</title>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<h1>가입폼</h1>
+		</header>
+		<article>
+			<form action="Ex6_Servlet" method="get">
+				<table>
+					<caption>가입폼의 테이블</caption>
+					<colgroup>
+						<col width="70px"/>
+						<col width="*"/>
+					</colgroup>
+					<tbody>
+						<tr>
+							<td><label for="s_id">아이디: </label></td>
+							<td>
+								<input type="text" name="u_id" id="s_id" data-msg="아이디" />
+							</td>
+						</tr>
+						<tr>
+							<td><label for="s_pw">비밀번호: </label></td>
+							<td>
+								<input type="password" name="u_pw" id="s_pw" data-msg="비밀번호" />
+							</td>
+						</tr>
+						<tr>
+							<td><label for="s_name">이름: </label></td>
+							<td>
+								<input type="text" name="u_name" id="s_name" data-msg="이름" />
+							</td>
+						</tr>
+						<tr>
+							<td><label for="s_email">이메일: </label></td>
+							<td>
+								<input type="text" name="u_email" id="s_email" />
+								<label for="s_email2">@</label>
+								<input type="text" name="u_email2" id="s_email2"/>
+								<select id="sel_email">
+									<option>직접입력</option>
+									<option value="gmail.com">구글</option>
+									<option value="naver.com">네이버</option>
+									<option value="daum.net">다음(카카오)</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="s_hobby">취미: </label></td>
+							<td>
+								<input type="checkbox" name="u_hobby" id="s_hobby1" value="독서" />
+								<span>독서</span>
+								&nbsp;&nbsp;
+								<input type="checkbox" name="u_hobby" id="s_hobby2" value="음악감상" />
+								<span>음악감상</span>
+								&nbsp;&nbsp;
+								<input type="checkbox" name="u_hobby" id="s_hobby3" value="영화감상" />
+								<span>영화감상</span>
+								&nbsp;&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button type="button" id="btn">
+									보내기
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</article>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+
+				let ar = document.forms[0].elements;
+
+
+
+				//받은 하위요소들 중 아이디, 비밀번호, 이름만 유효성 검사 진행.
+				for(let i=0; i<ar.length-1; i++){
+					if(i>=3){
+						break;
+					}
+					if(ar[i].value.trim().length < 1){
+						alert(ar[i].dataset.msg+"을 입력하세요.");
+						ar[i].value = "";
+						ar[i].focus();
+						return;
+					}
+				}
+
+				document.forms[0].submit();
+				
+			});
+
+			$("#sel_email").change(function(){
+				let thisVal = $(this).val();
+				console.log(thisVal);
+				if(thisVal == "직접입력"){
+					$("#s_email2").val("");
+					$("#s_email2").prop("disabled",false);
+				} else{
+					$("#s_email2").prop("disabled",true);
+					$("#s_email2").val(thisVal);
+				}
+
+			});
+		});
+	</script>
+</body>
+</html>
