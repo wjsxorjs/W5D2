@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex8_Homework</title>
+</head>
+<body>
+    <div>
+        <form action="ex8" method="get">
+            <select name="keyword" id="keyword">
+                <option value="empno">사번</option>
+                <option value="ename">이름</option>
+                <option value="job">직종</option>
+            </select>
+            <input type="text" name="search" id="search" />
+            <button type="button" id="btn">검색</button>
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $("#btn").bind("click",function(){
+                
+                document.forms[0].submit();
+
+            });
+        });
+    </script>
+</body>
+</html>

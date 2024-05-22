@@ -59,4 +59,34 @@
     <servlet-name>Ex5_Servlet</servlet-name>
     <url-pattern>/ex5</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex6_Servlet</display-name>
+    <servlet-name>Ex6_Servlet</servlet-name>
+    <servlet-class>am.Ex6_Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex6_Servlet</servlet-name>
+    <url-pattern>/ex6</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex7_EmpAll</display-name>
+    <servlet-name>Ex7_EmpAll</servlet-name>
+    <servlet-class>pm.Ex7_EmpAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex7_EmpAll</servlet-name>
+    <url-pattern>/Ex7_EmpAll</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex8_Search</display-name>
+    <servlet-name>Ex8_Search</servlet-name>
+    <servlet-class>pm.Ex8_Search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex8_Search</servlet-name>
+    <url-pattern>/ex8</url-pattern>
+  </servlet-mapping>
 </web-app>
