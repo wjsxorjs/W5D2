@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Servlet implementation class Ex2_Servlet
+ * Servlet implementation class Ex3_Servlet
  */
-public class Ex2_Servlet extends HttpServlet {
+public class Ex3_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Ex2_Servlet() {
+    public Ex3_Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,18 +27,21 @@ public class Ex2_Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 응답시 한글 처리
-		response.setContentType("text/html; charset=utf-8"); // MIME타입
+		response.setContentType("text/html;charset=utf-8");
+
+		String id = request.getParameter("m_id");
+		String name = request.getParameter("m_name");
+		String addr = request.getParameter("m_addr");
 		
-		// 응답을 위한 스트림 준비
+		
 		PrintWriter out = response.getWriter();
+
+		out.println("<h2>받은 아이디: "+id+"</h2>");
+		out.println("<h2>받은 이름: "+name+"</h2>");
+		out.println("<h2>받은 주소: "+addr+"</h2>");
 		
-		// 요청(request)한 곳으로 부터 파라미터(인자) 받기
-		// msg라는 이름으로 전달되는 인자를 받자
-		String param1 = request.getParameter("msg");
-		String param2 = request.getParameter("name");
+		out.close();
 		
-		// 응답시작
-		out.println("<h2>"+param1+" / "+param2+"입니다.</h2>");
 		
 	}
 

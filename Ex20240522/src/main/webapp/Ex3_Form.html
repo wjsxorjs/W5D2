@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex3_Form</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>Servlet에 인자 보내기</h1>
+        </header>
+        <section>
+            <form action="/ex3" method="get">
+                <label for="u_id">아이디: </label>
+                <input type="text" name="m_id" id="u_id"/>
+                <br/>
+                <label for="u_name">이름: </label>
+                <input type="text" name="m_name" id="u_name"/>
+                <br/>
+                <label for="u_addr">주소: </label>
+                <input type="text" name="m_addr" id="u_addr"/>
+                <br/>
+                <button type="button" onclick="sendData()">보내기</button>
+            </form>
+        </section>
+    </article>
+
+
+    <script>
+        
+        function sendData(){
+
+            let mid = document.getElementById("u_id");
+            let mname = document.getElementById("u_name");
+
+            let s_id = mid.value.trim();
+            let s_name = mname.value.trim();
+
+            if(s_id.length < 1){
+                alert("아이디를 입력하세요.");
+                mid.value = "";
+                mid.focus();
+                return;
+            }
+            if(s_name.length < 1){
+                alert("이름을 입력하세요.");
+                mname.value = "";
+                mname.focus();
+                return;
+            }
+            document.forms[0].submit(); // 서버로 보낸다.
+        }
+    </script>
+</body>
+</html>
