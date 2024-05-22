@@ -49,4 +49,14 @@
     <servlet-name>Ex4_Servlet</servlet-name>
     <url-pattern>/ex4</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ex5_Servlet</display-name>
+    <servlet-name>Ex5_Servlet</servlet-name>
+    <servlet-class>am.Ex5_Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ex5_Servlet</servlet-name>
+    <url-pattern>/ex5</url-pattern>
+  </servlet-mapping>
 </web-app>
