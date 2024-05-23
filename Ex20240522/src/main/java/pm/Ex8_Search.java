@@ -43,6 +43,7 @@ public class Ex8_Search extends HttpServlet {
 		Reader r = Resources.getResourceAsReader("pm/config/config.xml");
 		
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		r.close();
 		
 		SqlSession ss = factory.openSession();
 		
@@ -65,8 +66,9 @@ public class Ex8_Search extends HttpServlet {
 		StringBuffer sb = new StringBuffer("<h2>["+keyword+":'"+search+"']검색결과</h2>");
 		
 		sb.append("<ol>");
-		for(int i=0; i<e_list.size(); i++) {
-			EmpVO evo = e_list.get(i);
+//		for(int i=0; i<e_list.size(); i++) {
+//			EmpVO evo = e_list.get(i);
+		for(EmpVO evo : e_list) { //개선된 loop || for(자료형 변수명 : 배열)
 			sb.append("<li>");
 			sb.append(evo.getEmpno());
 			sb.append(" | ");
